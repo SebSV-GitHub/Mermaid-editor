@@ -1,1 +1,1 @@
-export { default as Component } from "./component/index.js";
+export { default as Mermaid } from "./mermaid/index.js";
