@@ -1,10 +1,8 @@
 {
-	"name": "monorepo-template",
+	"name": "mermaid-editor",
 	"private": true,
 	"scripts": {
-		"start": "turbo start",
-		"build": "turbo build",
-		"test": "turbo test",
+		"dev": "turbo dev",
 		"format": "prettier --write --ignore-unknown .",
 		"lint": "xo --fix",
 		"prepare": "husky"
