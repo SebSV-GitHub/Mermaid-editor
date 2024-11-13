@@ -3,6 +3,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "turbo dev",
+		"build": "turbo build",
 		"format": "prettier --write --ignore-unknown .",
 		"lint": "xo --fix",
 		"prepare": "husky"

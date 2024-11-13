@@ -3,8 +3,13 @@
 	"ui": "tui",
 	"tasks": {
 		"dev": {
+			"dependsOn": ["@sebsv/ts-mermaid#build"],
 			"cache": false,
 			"persistent": true
+		},
+		"@sebsv/ts-mermaid#build": {
+			"dependsOn": ["^@sebsv/ts-mermaid#build"],
+			"outputs": ["dist"]
 		}
 	}
 }
