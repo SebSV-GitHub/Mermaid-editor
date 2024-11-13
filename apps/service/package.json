@@ -1,0 +1,22 @@
+{
+	"name": "service",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"start": "tsx ./src/index.ts",
+		"test": "jest"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"dependencies": {
+		"@sebsv/util": "*"
+	},
+	"devDependencies": {
+		"@types/jest": "^29.5.14",
+		"jest": "^29.7.0",
+		"ts-jest": "^29.2.5",
+		"tsx": "^4.19.2",
+		"typescript": "^5.6.3"
+	}
+}

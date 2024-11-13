@@ -1,0 +1,42 @@
+{
+	"name": "monorepo-template",
+	"private": true,
+	"scripts": {
+		"start": "turbo start",
+		"build": "turbo build",
+		"test": "turbo test",
+		"format": "prettier --write --ignore-unknown .",
+		"lint": "xo --fix",
+		"prepare": "husky"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/SebSV-GitHub/Monorepo-TypeScript-template.git"
+	},
+	"keywords": [
+		"NPM",
+		"Package",
+		"Template"
+	],
+	"author": "Sebastián Suárez Valencia <contact@sebsv.com> (https://www.sebsv.com)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/SebSV-GitHub/Monorepo-TypeScript-template/issues"
+	},
+	"homepage": "https://github.com/SebSV-GitHub/Monorepo-TypeScript-template#readme",
+	"engines": {
+		"node": ">=18"
+	},
+	"devDependencies": {
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"prettier": "3.3.3",
+		"turbo": "^2.2.3",
+		"xo": "^0.59.3"
+	},
+	"packageManager": "npm@10.8.2",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	]
+}
