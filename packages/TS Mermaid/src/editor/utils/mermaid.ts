@@ -16,7 +16,12 @@ function defineTheme() {
 		base: "vs-dark",
 		inherit: true,
 		colors: {},
-		rules: [],
+		rules: [
+			{ token: "typeKeyword", foreground: "4EC9B0" },
+			{ token: "keyword", foreground: "C586C0" },
+			{ token: "string", foreground: "ce9178" },
+			{ token: "transition", foreground: "C8C8C8", fontStyle: "bold" },
+		],
 	});
 }
 

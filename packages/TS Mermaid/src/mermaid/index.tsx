@@ -1,17 +1,24 @@
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import mermaid from "mermaid";
 
-mermaid.initialize({ startOnLoad: false });
+mermaid.initialize({
+	startOnLoad: false,
+	class: {
+		hideEmptyMembersBox: true,
+	},
+});
 
-type MermaidProperties = {
+type MermaidProps = {
 	readonly diagram: string;
 };
 
-function Mermaid({ diagram }: MermaidProperties) {
-	const preElement = useRef<HTMLPreElement | null>(null); // eslint-disable-line @typescript-eslint/ban-types
+const Mermaid = forwardRef<HTMLPreElement, MermaidProps>(({ diagram }, ref) => {
+	const preElement = useRef<HTMLPreElement>(null);
+
+	useImperativeHandle(ref, () => preElement.current!);
 
 	useEffect(() => {
-		if (preElement.current) {
+		if (preElement?.current) {
 			delete preElement.current.dataset.processed;
 		}
 
@@ -25,6 +32,6 @@ function Mermaid({ diagram }: MermaidProperties) {
 			{diagram}
 		</pre>
 	);
-}
+});
 
 export default Mermaid;

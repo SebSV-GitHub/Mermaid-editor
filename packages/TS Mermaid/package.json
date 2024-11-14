@@ -12,7 +12,16 @@
 		"prettier": true,
 		"extends": "xo-react",
 		"rules": {
-			"react/react-in-jsx-scope": 0
+			"react/react-in-jsx-scope": 0,
+			"unicorn/prevent-abbreviations": [
+				"error",
+				{
+					"allowList": {
+						"props": true,
+						"ref": true
+					}
+				}
+			]
 		}
 	},
 	"dependencies": {
@@ -25,7 +34,6 @@
 		"@chromatic-com/storybook": "^3.2.2",
 		"@storybook/addon-essentials": "^8.4.3",
 		"@storybook/addon-interactions": "^8.4.3",
-		"@storybook/addon-onboarding": "^8.4.3",
 		"@storybook/blocks": "^8.4.3",
 		"@storybook/builder-vite": "^8.4.3",
 		"@storybook/react": "^8.4.3",

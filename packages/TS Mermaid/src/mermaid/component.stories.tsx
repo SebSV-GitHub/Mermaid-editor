@@ -15,6 +15,9 @@ erDiagram
 const story = {
 	component: Mermaid,
 	title: "Mermaid",
+	parameters: {
+		layout: "centered",
+	},
 	args: {
 		diagram,
 	},

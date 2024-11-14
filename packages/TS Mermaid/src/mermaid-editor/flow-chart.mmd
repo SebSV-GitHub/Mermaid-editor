@@ -1,0 +1,61 @@
+---
+title: Node
+---
+flowchart LR
+    markdown["`This **is** _Markdown_`"]
+    roundEdge(This is the text in the box)
+    stadium([This is the text in the box])
+    subroutine[[This is the text in the box]]
+    cylindrical[(Database)]
+    circle((This is the text in the circle))
+    asymmectric>This is the text in the box]
+    rhombus{This is the text in the box}
+    hexagon{{This is the text in the box}}
+    parallelogram[/This is the text in the box/]
+    parallelogramAlt[\This is the text in the box\]
+    trapezoid[/Christmas\]
+    trapezoidAlt[\Go shopping/]
+    doubleCircle(((This is the text in the circle)))
+
+    subgraph Subgraph 1
+        markdown --> roundEdge
+        roundEdge --- stadium
+        stadium -- Link text --- subroutine
+        stadium --- |Link text 2| cylindrical
+    end
+
+    subgraph sg2[Subgraph 2]
+        circle -- Link text 3 --> asymmectric
+        asymmectric -.-> rhombus & hexagon
+        rhombus -. Text .-> hexagon
+    end
+
+    subgraph sg3[Subgraph 3]
+        direction LR
+        parallelogram ==> parallelogramAlt
+        parallelogramAlt == Text ==> trapezoid
+        trapezoid ~~~ trapezoidAlt
+    end
+
+    doubleCircle --> sg2
+    
+    A@{ shape: card, label: "Card A" }
+    B@{ shape: card, label: "Card b" }
+
+    style A fill:#f9f,stroke:#333,stroke-width:4px,color:#fff,stroke-dasharray: 5 5
+    classDef exampleClass fill:#f9f,stroke:#333,stroke-width:4px;
+    classDef default font-size:16pt;
+
+    class B exampleClass
+    
+    A --o B
+    C:::exampleClass --x D
+
+    E o--o F
+    G <--> H
+    I x--x J
+
+    especialCharacters["This is the (text) in the box"]
+    escaped["A double quote:#quot;"] --> htmlCharacterName["A dec char:#9829;"]
+
+    normal --> html[AAA<span>BBB</span>]

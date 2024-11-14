@@ -2,6 +2,9 @@ import Editor from "./index.js";
 
 const story = {
 	component: Editor,
+	parameters: {
+		layout: "fullscreen",
+	},
 	title: "Editor",
 };
 

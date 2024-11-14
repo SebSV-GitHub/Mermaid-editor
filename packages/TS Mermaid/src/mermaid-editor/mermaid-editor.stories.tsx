@@ -1,3 +1,9 @@
+import flowChart from "./flow-chart.mmd?raw";
+import sequenceDiagram from "./sequence-diagram.mmd?raw";
+import classDiagram from "./class-diagram.mmd?raw";
+import stateDiagram from "./state-diagram.mmd?raw";
+import entityRelationshipDiagram from "./entity-relationship-diagram.mmd?raw";
+import userJourneyDiagram from "./user-journey-diagram.mmd?raw";
 import MermaidEditor from "./index.js";
 
 const story = {
@@ -7,126 +13,40 @@ const story = {
 
 const Default = {};
 
-const flowCharInitialValue = `
-flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    end
-
-`;
 const FlowChart = {
 	args: {
-		initialValue: flowCharInitialValue,
+		initialValue: flowChart,
 	},
 };
-
-const sequenceDiagramInitialValue = `
-sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
-    Alice-)John: See you later!
-`;
 
 const SequenceDiagram = {
 	args: {
-		initialValue: sequenceDiagramInitialValue,
+		initialValue: sequenceDiagram,
 	},
 };
-
-const classDiagramInitialValue = `
----
-title: Animal example
----
-classDiagram
-    note "From Duck till Zebra"
-    Animal <|-- Duck
-    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
-    }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
-    }
-    class Zebra{
-        +bool is_wild
-        +run()
-    }
-`;
 
 const ClassDiagram = {
 	args: {
-		initialValue: classDiagramInitialValue,
+		initialValue: classDiagram,
 	},
 };
-
-const stateDiagramInitialValue = `
----
-title: Simple sample
----
-stateDiagram-v2
-    [*] --> Still
-    Still --> [*]
-
-    Still --> Moving
-    Moving --> Still
-    Moving --> Crash
-    Crash --> [*]
-`;
 
 const StateDiagram = {
 	args: {
-		initialValue: stateDiagramInitialValue,
+		initialValue: stateDiagram,
 	},
 };
-
-const entityRelationshipDiagramInitialValue = `
----
-title: Order example
----
-erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    ORDER ||--|{ LINE-ITEM : contains
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-`;
 
 const EntityRelationshipDiagram = {
 	title: "Entity Relationship Diagrams",
 	args: {
-		initialValue: entityRelationshipDiagramInitialValue,
+		initialValue: entityRelationshipDiagram,
 	},
 };
 
-const userJourneyDiagramInitialValue = `
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
-`;
-
 const UserJourneyDiagram = {
 	args: {
-		initialValue: userJourneyDiagramInitialValue,
+		initialValue: userJourneyDiagram,
 	},
 };
 
