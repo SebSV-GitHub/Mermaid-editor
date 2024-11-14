@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
+import configureMermaidIntoMonaco from "./utils/mermaid.js";
 
 type EditorProperties = {
 	readonly onChange: (value: string) => void;
@@ -13,9 +14,16 @@ function Editor({ onChange }: EditorProperties) {
 
 	useEffect(() => {
 		if (monacoElement.current && !editor.current) {
+			configureMermaidIntoMonaco();
+
 			editor.current = monaco.editor.create(monacoElement.current, {
 				value: "",
-				theme: "vs-dark",
+				language: "mermaid",
+				theme: "mermaid-dark",
+				fontSize: 16,
+				minimap: {
+					enabled: false,
+				},
 			});
 
 			editor.current.onDidChangeModelContent(() => {
