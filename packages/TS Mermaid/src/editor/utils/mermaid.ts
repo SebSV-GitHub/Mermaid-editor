@@ -16,11 +16,7 @@ function defineTheme() {
 		base: "vs-dark",
 		inherit: true,
 		colors: {},
-		rules: [
-			{ token: "typeKeyword", foreground: "9650c8", fontStyle: "bold" },
-			{ token: "transition", foreground: "008800", fontStyle: "bold" },
-			{ token: "identifier", foreground: "9cdcfe" },
-		],
+		rules: [],
 	});
 }
 

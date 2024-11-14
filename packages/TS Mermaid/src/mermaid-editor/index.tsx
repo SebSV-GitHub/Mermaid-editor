@@ -2,8 +2,12 @@ import { useState } from "react";
 import Editor from "../editor/index.js";
 import Mermaid from "../mermaid/index.js";
 
-function MermaidEditor() {
-	const [value, setValue] = useState("");
+type MermaidEditorProperties = {
+	readonly initialValue?: string;
+};
+
+function MermaidEditor({ initialValue }: MermaidEditorProperties) {
+	const [value, setValue] = useState(initialValue ?? "");
 
 	const handleModelOnChange = (incomingValue: string) => {
 		setValue(incomingValue);
@@ -13,16 +17,28 @@ function MermaidEditor() {
 		<div
 			style={{
 				display: "flex",
-				gap: "1rem",
 				width: "100%",
 				height: "100vh",
 			}}
 		>
 			<div style={{ width: "50%" }}>
-				<Editor onChange={handleModelOnChange} />
+				<Editor initialValue={initialValue} onChange={handleModelOnChange} />
 			</div>
-			<div style={{ width: "50%" }}>
-				<Mermaid diagram={value} />
+			<div
+				style={{
+					width: "50%",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+				}}
+			>
+				<div
+					style={{
+						width: "75%",
+					}}
+				>
+					<Mermaid diagram={value} />
+				</div>
 			</div>
 		</div>
 	);

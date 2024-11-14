@@ -4,9 +4,10 @@ import configureMermaidIntoMonaco from "./utils/mermaid.js";
 
 type EditorProperties = {
 	readonly onChange: (value: string) => void;
+	readonly initialValue?: string;
 };
 
-function Editor({ onChange }: EditorProperties) {
+function Editor({ onChange, initialValue }: EditorProperties) {
 	const monacoElement = useRef(null);
 	const editor = useRef<monaco.editor.IStandaloneCodeEditor | undefined>(
 		undefined
@@ -17,7 +18,7 @@ function Editor({ onChange }: EditorProperties) {
 			configureMermaidIntoMonaco();
 
 			editor.current = monaco.editor.create(monacoElement.current, {
-				value: "",
+				value: initialValue ?? "",
 				language: "mermaid",
 				theme: "mermaid-dark",
 				fontSize: 16,
