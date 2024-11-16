@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import Mermaid from "../index.js";
 import diagram from "./diagram.mmd?raw";
-import Mermaid from "./index.js";
 
 type Story = StoryObj<typeof Mermaid>;
 
 const story: Meta<typeof Mermaid> = {
 	component: Mermaid,
-	title: "Mermaid",
+	title: "Mermaid/Flowchart",
 	parameters: {
 		layout: "centered",
 	},

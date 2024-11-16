@@ -40,7 +40,7 @@ function Editor({ onChange, initialValue }: EditorProperties) {
 			ref={monacoElement}
 			style={{
 				width: "100%",
-				height: "100%",
+				height: "100vh",
 			}}
 		/>
 	);

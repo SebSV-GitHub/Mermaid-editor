@@ -1,0 +1,21 @@
+.node {
+	filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.1));
+}
+
+.node span.nodeLabel p {
+	font-family: "Helvetica Neue";
+	font-size: 20px;
+	font-weight: 300;
+	line-height: normal;
+	letter-spacing: 0.01em;
+}
+
+/* Round edges node */
+.node rect[rx="5"][ry="5"] {
+	rx: 10px;
+	ry: 10px;
+}
+
+.edge-thickness-normal {
+	stroke-width: 2px;
+}
